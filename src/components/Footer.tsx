@@ -27,11 +27,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Columna 1: Marca */}
           <div className="space-y-4">
-            <img
-              src="/logo 1.png"
-              alt="Edilio Beas - Consultor PyME"
-              className="h-12 w-auto"
-            />
+            <h2 className="text-xl font-heading font-bold text-white">Edilio Beas</h2>
             <p className="text-white/60 text-sm leading-relaxed">
               Consultor especialista en marketing digital, transformación digital y tecnología
               para PyMEs en LATAM.
