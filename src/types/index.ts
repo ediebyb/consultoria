@@ -4,11 +4,16 @@ export interface Service {
   id: string
   icon: ComponentType<{ size?: number | string; className?: string }>
   title: string
-  description: string
-  features: string[]
+  shortDescription: string
   price: string
   cta: string
-  note?: string
+  fullDetails: {
+    description: string
+    features: string[]
+    deliverables: string[]
+    timeline: string
+    ctaFinal: string
+  }
 }
 
 export interface Testimonial {

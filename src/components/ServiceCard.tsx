@@ -1,74 +1,53 @@
 import { motion } from 'framer-motion'
 import type { Service } from '@/types'
 import { cardHover } from '@/utils/animations'
-import { Check } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 interface ServiceCardProps {
   service: Service
+  onOpenModal: (service: Service) => void
 }
 
-export default function ServiceCard({ service }: ServiceCardProps) {
+export default function ServiceCard({ service, onOpenModal }: ServiceCardProps) {
   const Icon = service.icon
-
-  const handleScrollToContact = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault()
-    const target = document.querySelector('#contacto')
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
 
   return (
     <motion.div
       variants={cardHover}
       initial="rest"
       whileHover="hover"
-      className="bg-white rounded-2xl p-6 border border-gray-100 cursor-default flex flex-col h-full"
+      className="p-6 hover:shadow-xl transition-shadow duration-300 bg-white rounded-xl border border-gray-100 flex flex-col h-full"
     >
-      {/* Ícono */}
-      <div className="inline-flex items-center justify-center w-12 h-12 bg-brand-primary/10 rounded-xl mb-4">
-        <Icon size={24} className="text-brand-primary" aria-hidden="true" />
+      {/* Icono más grande y llamativo */}
+      <div className="w-14 h-14 bg-gradient-to-br from-[#05121F] to-[#0F2436] rounded-lg flex items-center justify-center mb-4 shadow-lg">
+        <Icon className="w-7 h-7 text-[#C5A059]" aria-hidden="true" />
       </div>
 
-      {/* Título */}
-      <h3 className="text-lg font-heading font-semibold text-brand-dark mb-2">
+      {/* Título corto y directo */}
+      <h3 className="text-xl font-bold text-[#05121F] mb-2">
         {service.title}
       </h3>
 
-      {/* Descripción */}
-      <p className="text-gray-600 text-sm leading-relaxed mb-4">
-        {service.description}
+      {/* Descripción ultra-corta (máx 2 líneas) */}
+      <p className="text-gray-600 text-sm mb-4 line-clamp-2 leading-relaxed">
+        {service.shortDescription}
       </p>
 
-      {/* Features */}
-      <ul className="space-y-2 mb-4 flex-1">
-        {service.features.map((feature, index) => (
-          <li key={index} className="flex items-start gap-2 text-sm text-gray-600">
-            <Check size={16} className="text-brand-accent flex-shrink-0 mt-0.5" aria-hidden="true" />
-            <span>{feature}</span>
-          </li>
-        ))}
-      </ul>
-
-      {/* Note */}
-      {service.note && (
-        <p className="text-xs text-gray-500 mb-3 italic">
-          {service.note}
-        </p>
-      )}
-
-      {/* Price */}
-      <div className="mb-4">
-        <span className="text-lg font-bold text-brand-primary">{service.price}</span>
+      {/* Precio destacado */}
+      <div className="mb-4 mt-auto">
+        <span className="text-2xl font-bold text-[#C5A059]">
+          {service.price}
+        </span>
       </div>
 
-      {/* CTA */}
+      {/* Botón "Ver más" */}
       <button
-        onClick={handleScrollToContact}
-        className="w-full inline-flex items-center justify-center px-4 py-3 bg-brand-accent text-white text-sm font-semibold rounded-lg hover:bg-amber-600 transition-colors duration-200"
-        aria-label={service.cta}
+        onClick={() => onOpenModal(service)}
+        className="w-full bg-[#05121F] text-white py-3 rounded-lg font-semibold hover:bg-[#0F2436] transition-colors flex items-center justify-center gap-2"
+        aria-label={`Ver más detalles de ${service.title}`}
       >
-        {service.cta}
+        Ver más
+        <ArrowRight className="w-4 h-4" aria-hidden="true" />
       </button>
     </motion.div>
   )

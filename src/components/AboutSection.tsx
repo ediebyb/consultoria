@@ -36,9 +36,21 @@ export default function AboutSection() {
                 className="w-72 h-72 sm:w-80 sm:h-80 rounded-3xl object-cover shadow-2xl"
               />
 
-              {/* Badge flotante */}
-              <div className="absolute -bottom-4 -right-4 bg-brand-accent text-white px-4 py-2 rounded-xl shadow-lg font-semibold text-sm">
-                10+ años de experiencia
+              {/* Badge flotante 1 - Experiencia */}
+              <div className="absolute -top-4 -right-4 bg-[#C5A059] text-white px-6 py-3 rounded-xl shadow-xl">
+                <div className="text-2xl font-bold">10+</div>
+                <div className="text-xs">Años de experiencia</div>
+              </div>
+
+              {/* Badge flotante 2 - Proyectos */}
+              <div className="absolute -bottom-4 -left-4 bg-[#05121F] text-white px-6 py-3 rounded-xl shadow-xl">
+                <div className="text-2xl font-bold">150+</div>
+                <div className="text-xs">Proyectos exitosos</div>
+              </div>
+
+              {/* Elemento decorativo - Líneas doradas */}
+              <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%]">
+                <div className="w-full h-full border-2 border-[#C5A059]/20 rounded-3xl rotate-3" />
               </div>
             </div>
           </motion.div>
