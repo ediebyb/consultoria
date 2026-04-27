@@ -97,7 +97,7 @@ export default function Navigation() {
 
               alt="Edilio Beas Logo"
 
-              className="h-10 w-auto"
+              className="h-16 w-auto"
 
             />
 

@@ -118,13 +118,13 @@ export default function ContactSection() {
 
                     <a
 
-                      href="mailto:edilio@ediliobeas.com"
+                      href="mailto:edilio.beas@gmail.com"
 
                       className="text-brand-dark font-medium hover:text-brand-primary transition-colors"
 
                     >
 
-                      edilio@ediliobeas.com
+                      edilio.beas@gmail.com
 
                     </a>
 
@@ -376,7 +376,7 @@ export default function ContactSection() {
 
                 <a
 
-                  href="mailto:edilio@ediliobeas.com"
+                  href="mailto:edilio.beas@gmail.com"
 
                   className="flex flex-col items-center gap-2 p-4 bg-white border border-gray-200 rounded-lg hover:border-[#D4AF6A] hover:shadow-lg transition-all group"
 
