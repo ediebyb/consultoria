@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react'
 import type { FormData, FormErrors, FormStatus } from '@/types'
-import { encode, validateForm } from '@/utils/formUtils'
+import { validateForm } from '@/utils/formUtils'
 import { fadeInUp } from '@/utils/animations'
 
 const INITIAL_DATA: FormData = {
@@ -44,17 +44,19 @@ export default function ContactForm() {
     }
 
     setStatus('submitting')
-    try {
-      await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encode({ 'form-name': 'contacto', ...data }),
-      })
-      setStatus('success')
-      setData(INITIAL_DATA)
-    } catch {
-      setStatus('error')
-    }
+
+    // Cloudflare Pages es estático - usar mailto: para enviar correo
+    const subject = `Nuevo mensaje de ${data.name} desde ediliobeas.com`
+    const body = `Nombre: ${data.name}\nEmail: ${data.email || 'No proporcionado'}\nTeléfono: ${data.phone}\n\nMensaje:\n${data.message}`
+    const mailtoLink = `mailto:edilio@ediliobeas.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+
+    // Simular delay para mostrar estado de carga
+    await new Promise((resolve) => setTimeout(resolve, 500))
+
+    // Abrir cliente de correo
+    window.location.href = mailtoLink
+    setStatus('success')
+    setData(INITIAL_DATA)
   }
 
   if (status === 'success') {
@@ -88,22 +90,11 @@ export default function ContactForm() {
   return (
     <form
       name="contacto"
-      method="POST"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
       noValidate
       className="space-y-6"
       aria-label="Formulario de contacto"
     >
-      {/* Campos ocultos para Netlify */}
-      <input type="hidden" name="form-name" value="contacto" />
-      <div hidden aria-hidden="true">
-        <label>
-          No llenar si eres humano:
-          <input name="bot-field" tabIndex={-1} autoComplete="off" />
-        </label>
-      </div>
 
       {/* Banner de error de red */}
       {status === 'error' && (
