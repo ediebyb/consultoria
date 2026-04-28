@@ -190,7 +190,7 @@ export const SERVICES: Service[] = [
     executiveSummary: 'Convierte tus seguidores en clientes. Estrategia de contenido diseñada para aumentar ventas, posicionarte como autoridad y fidelizar tu audiencia con publicaciones de alto valor.',
     fullDescription: 'Deja de publicar por publicar. La mayoría de las empresas en redes sociales generan contenido sin estrategia y terminan agotadas sin resultados. Este servicio transforma tu presencia digital en un canal de ventas efectivo: diagnostico tu situación actual, optimizo tus biografías para convertir visitantes en seguidores, y creo un plan de contenido mensual enfocado exclusivamente en tus objetivos de negocio. Desde la creación de piezas profesionales hasta la administración de campañas pagadas, todo trabaja para generar ROI real.',
     features: [
-      '✓ Diagnóstico completo de tu presencia actual en redes sociales',
+      '✓ Evaluación completa de tu presencia actual en redes sociales',
       '✓ Optimización de biografías que convierten visitantes en seguidores calificados',
       '✓ Plan de contenido mensual estratégico enfocado en resultados',
       '✓ Creación profesional de contenido (diseño gráfico + copywriting persuasivo)',
