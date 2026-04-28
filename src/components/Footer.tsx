@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Shield } from 'lucide-react'
+import { Shield, CreditCard, Bitcoin, Landmark } from 'lucide-react'
 import { fadeIn } from '@/utils/animations'
 import { SETMORE_LINK } from '@/data/setmore'
 
@@ -77,6 +77,27 @@ export default function Footer() {
             <div className="mt-6 flex items-center gap-2 text-sm text-gray-500">
               <Shield className="w-4 h-4 text-[#C5A059]" />
               <span>Confidencialidad 100% garantizada</span>
+            </div>
+          </div>
+        </div>
+
+        {/* MÉTODOS DE PAGO */}
+        <div className="border-t border-white/10 pt-6 pb-4">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-6">
+            <span className="text-gray-400 text-sm">Métodos de pago aceptados:</span>
+            <div className="flex items-center gap-6">
+              <div className="flex items-center gap-2 text-gray-300 hover:text-[#C5A059] transition-colors">
+                <CreditCard className="w-5 h-5" />
+                <span className="text-sm">PayPal</span>
+              </div>
+              <div className="flex items-center gap-2 text-gray-300 hover:text-[#C5A059] transition-colors">
+                <Bitcoin className="w-5 h-5" />
+                <span className="text-sm">Criptomonedas</span>
+              </div>
+              <div className="flex items-center gap-2 text-gray-300 hover:text-[#C5A059] transition-colors">
+                <Landmark className="w-5 h-5" />
+                <span className="text-sm">Transferencia Bancaria</span>
+              </div>
             </div>
           </div>
         </div>
