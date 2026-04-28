@@ -186,32 +186,32 @@ export const SERVICES: Service[] = [
     id: 'redes-sociales',
     icon: Share2,
     title: 'Manejo de Redes Sociales',
-    problem: '¿Tus redes sociales no generan ventas ni engagement?',
-    executiveSummary: 'Transforma tus redes en una máquina de ventas. Estrategia de contenido que posiciona tu marca como autoridad, conecta con clientes calificados y convierte seguidores en compradores reales sin depender solo de la suerte.',
-    fullDescription: 'El 90% de las empresas en redes sociales publican sin estrategia y desperdician su tiempo. Yo creo sistemas de contenido enfocados en resultados: diagnóstico completo de tu presencia actual, optimización de biografías que venden, y planes de contenido mensuales diseñados para 3 objetivos específicos que tú eliges según tu prioridad de negocio.',
+    problem: '¿Publicas constantemente pero tus redes no generan ventas?',
+    executiveSummary: 'Convierte tus seguidores en clientes. Estrategia de contenido diseñada para aumentar ventas, posicionarte como autoridad y fidelizar tu audiencia con publicaciones de alto valor.',
+    fullDescription: 'Deja de publicar por publicar. La mayoría de las empresas en redes sociales generan contenido sin estrategia y terminan agotadas sin resultados. Este servicio transforma tu presencia digital en un canal de ventas efectivo: diagnostico tu situación actual, optimizo tus biografías para convertir visitantes en seguidores, y creo un plan de contenido mensual enfocado exclusivamente en tus objetivos de negocio. Desde la creación de piezas profesionales hasta la administración de campañas pagadas, todo trabaja para generar ROI real.',
     features: [
-      '✓ Diagnóstico completo presencia actual en redes',
-      '✓ Optimización de biografías que convierten visitantes en seguidores',
-      '✓ Plan de contenido mensual enfocado en resultados',
-      '✓ Creación de contenido profesional (diseño + copywriting)',
-      '✓ Administración de campañas publicitarias pagadas',
-      '✓ Métricas y reportes de crecimiento real'
+      '✓ Diagnóstico completo de tu presencia actual en redes sociales',
+      '✓ Optimización de biografías que convierten visitantes en seguidores calificados',
+      '✓ Plan de contenido mensual estratégico enfocado en resultados',
+      '✓ Creación profesional de contenido (diseño gráfico + copywriting persuasivo)',
+      '✓ Administración y optimización de campañas publicitarias pagadas',
+      '✓ Métricas semanales de crecimiento y conversión real'
     ],
     pricing: {
       unique: 'Desde $370.000 CLP (pago único)',
       monthly: 'Desde $127.000 CLP/mes (pago recurrente)',
-      note: 'Precio no incluye impuestos. Inversión en ads no incluida.'
+      note: 'Precio no incluye impuestos. Inversión en publicidad pagada no incluida.'
     },
     timeline: '1 semana diagnóstico + implementación inmediata',
     deliverables: [
-      'Auditoría completa de redes sociales',
-      'Bios optimizadas para conversión',
-      'Plan de contenido mensual estratégico',
-      '12-15 piezas de contenido profesional/mes',
-      'Reporte semanal de métricas y resultados',
-      'Soporte y ajustes de estrategia continuo'
+      'Auditoría completa de redes sociales con informe detallado',
+      'Biografías optimizadas para conversión en todas tus plataformas',
+      'Plan de contenido mensual estratégico personalizado',
+      '12-15 piezas de contenido profesional por mes',
+      'Reporte semanal de métricas, alcance y conversiones',
+      'Soporte continuo y ajustes de estrategia según resultados'
     ],
-    image: '/social.png',
+    image: '/rrss.png',
     cta: 'Ver más →'
   },
 ]

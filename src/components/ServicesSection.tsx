@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Calendar, Share2 } from 'lucide-react'
+import { Calendar } from 'lucide-react'
 import { SERVICES } from '@/data/services'
 import { staggerContainer, fadeInUp } from '@/utils/animations'
 import ServiceCard from './ServiceCard'
@@ -82,10 +82,14 @@ export default function ServicesSection() {
           {SERVICES[6] && (
             <div className="bg-gradient-to-r from-[#05121F] via-[#0a1f35] to-[#05121F] rounded-2xl p-8 shadow-xl border border-[#C5A059]/30">
               <div className="flex flex-col lg:flex-row items-center gap-8">
-                {/* Icono e imagen */}
+                {/* Imagen */}
                 <div className="flex-shrink-0">
-                  <div className="w-32 h-32 rounded-2xl bg-[#C5A059]/20 flex items-center justify-center">
-                    <Share2 className="w-16 h-16 text-[#C5A059]" />
+                  <div className="w-32 h-32 rounded-2xl overflow-hidden bg-[#C5A059]/20 flex items-center justify-center">
+                    <img
+                      src={SERVICES[6].image}
+                      alt={SERVICES[6].title}
+                      className="w-full h-full object-cover rounded-2xl"
+                    />
                   </div>
                 </div>
                 
