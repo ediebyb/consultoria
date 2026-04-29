@@ -1,14 +1,14 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import type { Service } from '@/types'
 import { cardHover } from '@/utils/animations'
 import { ArrowRight } from 'lucide-react'
 
 interface ServiceCardProps {
   service: Service
-  onOpenModal: (service: Service) => void
 }
 
-export default function ServiceCard({ service, onOpenModal }: ServiceCardProps) {
+export default function ServiceCard({ service }: ServiceCardProps) {
   // Get lowest price from pricing object
   const getLowestPrice = () => {
     const prices = Object.entries(service.pricing)
@@ -60,15 +60,15 @@ export default function ServiceCard({ service, onOpenModal }: ServiceCardProps) 
         </p>
       </div>
 
-      {/* Button "Ver más" */}
-      <button
-        onClick={() => onOpenModal(service)}
+      {/* Button "Ver más" - Link a página de detalle */}
+      <Link
+        to={`/servicios/${service.id}`}
         className="w-full bg-[#05121F] text-white py-3 rounded-lg font-semibold hover:bg-[#0F2436] transition-colors flex items-center justify-center gap-2"
         aria-label={`Ver más detalles de ${service.title}`}
       >
         Ver más →
         <ArrowRight className="w-4 h-4" aria-hidden="true" />
-      </button>
+      </Link>
     </motion.div>
   )
 }

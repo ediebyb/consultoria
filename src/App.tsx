@@ -1,29 +1,19 @@
-import { useReducedMotion } from 'framer-motion'
-import Navigation from '@/components/Navigation'
-import HeroSection from '@/components/HeroSection'
-import ServicesSection from '@/components/ServicesSection'
-import AboutSection from '@/components/AboutSection'
-import TestimonialsSection from '@/components/TestimonialsSection'
-import ContactSection from '@/components/ContactSection'
-import Footer from '@/components/Footer'
-import WhatsAppButton from '@/components/WhatsAppButton'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import HomePage from '@/pages/HomePage'
+import ServiceDetailPage from '@/pages/ServiceDetailPage'
 
 export default function App() {
-  // Respeta la preferencia del sistema operativo para reducir movimiento
-  const shouldReduceMotion = useReducedMotion()
-
   return (
-    <div className={shouldReduceMotion ? 'motion-safe:transition-none' : ''}>
-      <Navigation />
-      <main id="main-content">
-        <HeroSection />
-        <ServicesSection />
-        <AboutSection />
-        <TestimonialsSection />
-        <ContactSection />
-      </main>
-      <Footer />
-      <WhatsAppButton />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/servicios/:serviceId" element={<ServiceDetailPage />} />
+        {/* Redirects para URLs legacy */}
+        <Route path="/inicio" element={<Navigate to="/" replace />} />
+        <Route path="/sobre-mi" element={<Navigate to="/#sobre-mi" replace />} />
+        <Route path="/testimonios" element={<Navigate to="/#testimonios" replace />} />
+        <Route path="/contacto" element={<Navigate to="/#contacto" replace />} />
+      </Routes>
+    </BrowserRouter>
   )
 }

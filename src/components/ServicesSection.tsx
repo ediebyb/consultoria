@@ -1,24 +1,12 @@
-import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { Calendar } from 'lucide-react'
 import { SERVICES } from '@/data/services'
 import { staggerContainer, fadeInUp } from '@/utils/animations'
 import ServiceCard from './ServiceCard'
-import ServiceModal from './ServiceModal'
-import type { Service } from '@/types'
 import { SETMORE_LINK } from '@/data/setmore'
 
 export default function ServicesSection() {
-  const [selectedService, setSelectedService] = useState<Service | null>(null)
-
-  const handleOpenModal = (service: Service) => {
-    setSelectedService(service)
-  }
-
-  const handleCloseModal = () => {
-    setSelectedService(null)
-  }
-
   return (
     <section
       id="servicios"
@@ -66,7 +54,7 @@ export default function ServicesSection() {
         >
           {SERVICES.slice(0, 6).map((service) => (
             <motion.div key={service.id} variants={fadeInUp}>
-              <ServiceCard service={service} onOpenModal={handleOpenModal} />
+              <ServiceCard service={service} />
             </motion.div>
           ))}
         </motion.div>
@@ -136,12 +124,12 @@ export default function ServicesSection() {
                 
                 {/* CTA */}
                 <div className="flex-shrink-0">
-                  <button
-                    onClick={() => handleOpenModal(SERVICES[6])}
-                    className="px-8 py-4 bg-[#C5A059] hover:bg-[#D4AF6A] text-[#05121F] font-bold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl whitespace-nowrap"
+                  <Link
+                    to={`/servicios/${SERVICES[6].id}`}
+                    className="inline-block px-8 py-4 bg-[#C5A059] hover:bg-[#D4AF6A] text-[#05121F] font-bold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl whitespace-nowrap"
                   >
                     Ver detalles →
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -172,13 +160,6 @@ export default function ServicesSection() {
           * Precios en CLP sin impuestos. Para clientes fuera de Chile se convierten a USD. Los valores finales pueden variar según las necesidades específicas de cada proyecto.
         </div>
       </div>
-
-      {/* Modal */}
-      <ServiceModal
-        service={selectedService}
-        isOpen={!!selectedService}
-        onClose={handleCloseModal}
-      />
     </section>
   )
 }
